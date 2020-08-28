@@ -1,0 +1,128 @@
+.App {
+  text-align: center;
+  background-color: #182039;
+  min-height: 100vh;
+  color: white;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 20pt;
+  min-height: 20vh;
+  font-weight: bold;
+}
+
+.content {  
+  min-height: 70vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+footer { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 10vh;
+}
+
+
+.content .dataInput, .content .dataTable {
+  background-color: #1e2745;
+  border-radius: 25pt;
+  display: flex;
+  flex-direction: column;
+  padding: 70pt;
+  color: white;
+}
+
+.content .dataTable {
+  margin-right: 50pt;
+  margin-left: 25pt;
+  width: 70%;
+}
+.content .dataInput {
+  margin-left: 50pt;
+  width: 30%;
+}
+.content .dataInput section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20pt;
+}
+.content .dataInput section p {
+  font-size: 15pt;
+}
+
+.content h1 {
+  margin-bottom: 20pt;
+}
+
+.content .dataTable .list  {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content .dataTable .list p {
+  font-size: 20pt;
+  background-color: #3e64ff;
+  padding: pt 10pt 5pt 10pt;
+  margin: 10pt;
+  border-radius: 3em;
+  font-weight: bold;
+  line-height: 3em;
+  width: 3em; 
+  
+}
+.content .dataTable #noResults {
+  font-size: 20pt;
+  color: rgba(255, 255, 255, .3) ;
+  font-weight: lighter;
+  text-align: center; 
+
+}
+
+.content .dataInput input {
+  border: none;
+  border-radius: 100pt;
+  font-size: 15pt;
+  color: white;
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: 0px 4px 20px 0px transparent;
+  transition: 0.3s box-shadow ease-in-out, 0.3s background-color ease-in-out;
+  padding: 10pt;
+  text-align: center;
+  width: 100pt;
+}
+
+.content .dataInput input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
+}
+
+.content .dataInput input:hover {
+  background-color: rgba(255, 255, 255, .15);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+
+.content .dataInput button {
+  border: none;
+  border-radius: 100pt;
+  font-size: 15pt;
+  color: white;
+  background-color: #3e64ff;
+  box-shadow: 0px 4px 20px 0px transparent;
+  transition: 0.3s box-shadow ease-in-out, 0.3s transform ease-in-out;
+  padding: 10pt 30pt;
+  text-align: center;
+}
+
+.content .dataInput button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
