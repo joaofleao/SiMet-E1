@@ -31,26 +31,28 @@ function App() {
         
       <div className='content'>
 
-        <form className='dataInput' onSubmit={generateNumbers}>
-          <h1>Insira os dados</h1>
-          <section>
-            <p>Multiplicador (a)</p>
-            <input value={a} onChange={e => setA(e.target.value)} placeholder='A' type='number'/>
-          </section>
-          <section>
-            <p>Valor Máximo (M)</p>
-            <input value={m} onChange={e => setM(e.target.value)} placeholder='M' type='number'min='1'/>
-          </section>
-          <section>
-            <p>Semente (X₀)</p>
-            <input value={x} onChange={e => setX(e.target.value)} placeholder='X' type='number'/>
-          </section>
-          <section>
-            <p>Constante (c)</p>
-            <input value={c} onChange={e => setC(e.target.value)} placeholder='C' type='number'/>
-          </section>
-          <button type='input'>Gerar Números</button>
-        </form>
+          <div className='dataInput'>
+            <h1>Insira os dados</h1>
+            <form onSubmit={generateNumbers}>
+                <section>
+                  <p>Multiplicador (a)</p>
+                  <input value={a} onChange={e => setA(e.target.value)} placeholder='A' type='number'/>
+                </section>
+                <section>
+                  <p>Valor Máximo (M)</p>
+                  <input value={m} onChange={e => setM(e.target.value)} placeholder='M' type='number'min='1'/>
+                </section>
+                <section>
+                  <p>Semente (X₀)</p>
+                  <input value={x} onChange={e => setX(e.target.value)} placeholder='X' type='number'/>
+                </section>
+                <section>
+                  <p>Constante (c)</p>
+                  <input value={c} onChange={e => setC(e.target.value)} placeholder='C' type='number'/>
+                </section>
+              <button type='input'>Gerar Números</button>
+            </form>
+          </div>
 
         <div className='dataTable'>
           <h1>Números Gerados</h1>

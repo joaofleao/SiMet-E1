@@ -17,8 +17,6 @@ header {
 .content {  
   min-height: 70vh;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
 footer { 
@@ -27,8 +25,6 @@ footer {
   justify-content: center;
   min-height: 10vh;
 }
-
-
 .content .dataInput, .content .dataTable {
   background-color: #1e2745;
   border-radius: 25pt;
@@ -38,53 +34,59 @@ footer {
   color: white;
 }
 
-.content .dataTable {
-  margin-right: 50pt;
-  margin-left: 25pt;
-  width: 70%;
+@media (min-width: 10px) {
+  .content {
+    justify-content: space-evenly;
+  }
+  .content .dataTable {
+    width: 65%;
+  }
+  .content .dataInput {
+    height: max-content;
+    width: 25%;
+  }
 }
-.content .dataInput {
-  margin-left: 50pt;
-  width: 30%;
-}
-.content .dataInput section {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20pt;
-}
-.content .dataInput section p {
-  font-size: 15pt;
+
+@media (max-width: 1600px) {
+  .content {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .content .dataInput, .content .dataTable  {
+    flex-direction: column;
+    width: 90%;
+    margin: 10pt auto;
+    padding: 30pt;
+  }
+  .content .dataInput form section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .content .dataInput form section input {
+    width: 60%;
+
+  }
+  header {
+    font-size: 15pt;
+    padding: 40pt 5pt 10pt 5pt;
+  }
+
 }
 
 .content h1 {
   margin-bottom: 20pt;
 }
 
-.content .dataTable .list  {
+.content .dataInput section {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20pt;
+}
+.content .dataInput p {
+  font-size: 15pt;
+  width: 60%;
 }
 
-.content .dataTable .list p {
-  font-size: 20pt;
-  background-color: #3e64ff;
-  padding: pt 10pt 5pt 10pt;
-  margin: 10pt;
-  border-radius: 3em;
-  font-weight: bold;
-  line-height: 3em;
-  width: 3em; 
-  
-}
-.content .dataTable #noResults {
-  font-size: 20pt;
-  color: rgba(255, 255, 255, .3) ;
-  font-weight: lighter;
-  text-align: center; 
-
-}
 
 .content .dataInput input {
   border: none;
@@ -96,7 +98,7 @@ footer {
   transition: 0.3s box-shadow ease-in-out, 0.3s background-color ease-in-out;
   padding: 10pt;
   text-align: center;
-  width: 100pt;
+  width: 40%;
 }
 
 .content .dataInput input[type=number]::-webkit-inner-spin-button { 
@@ -107,7 +109,6 @@ footer {
   background-color: rgba(255, 255, 255, .15);
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
 }
-
 
 .content .dataInput button {
   border: none;
@@ -125,4 +126,27 @@ footer {
   transform: scale(1.05);
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
   cursor: pointer;
+}
+
+.content .dataTable .list  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.content .dataTable .list p {
+  font-size: 20pt;
+  background-color: #3e64ff;
+  padding: pt 10pt 5pt 10pt;
+  margin: 10pt;
+  border-radius: 3em;
+  font-weight: bold;
+  line-height: 3em;
+  width: 3em; 
+}
+.content .dataTable #noResults {
+  font-size: 20pt;
+  color: rgba(255, 255, 255, .3) ;
+  font-weight: lighter;
+  text-align: center; 
 }
