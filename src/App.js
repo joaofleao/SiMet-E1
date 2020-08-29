@@ -9,20 +9,21 @@ function App() {
   
   const [numbers, setNumber] = useState([]);
   const [a, setA] = useState(0);
-  const [m, setM] = useState(1000);
-  const [c, setC] = useState(0);
+  const [m, setM] = useState(0);
   const [x, setX] = useState(0); 
+  const [c, setC] = useState(0);
   const [graph, setGraph] = useState({theme: "dark1", backgroundColor: "rgba(0,0,0,0)", data: [{}]});
   const [fileContent, setFileContent] = useState();
   
   function generateNumbers() {
-
     let number = x;
+
     let list = [];
     let listUniform = [];
 
     for (let index = 0; index < m; index++) {
-      let result = (a*number+c)%m; 
+      var result = (a*number+c)%m;
+      
       listUniform[index] = (result/m).toFixed(3);
       list[index] = result;
       number = result;
@@ -102,7 +103,7 @@ function App() {
                 </section>
                 <section>
                   <p>Constante (c)</p>
-                  <input value={c} onChange={e => setC(e.target.value)} placeholder='C' type='number'/>
+                  <input value={c} onChange={e => setC(parseInt(e.target.value))} placeholder='C' type='number'/>
                 </section>
               <button onClick={generateNumbers}>Gerar Números</button>
               <button onClick={downloadNumbers}>Download .yml</button>
