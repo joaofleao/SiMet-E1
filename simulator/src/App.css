@@ -30,7 +30,7 @@ footer {
   border-radius: 25pt;
   display: flex;
   flex-direction: column;
-  padding: 70pt;
+  padding: 30pt;
   color: white;
 }
 
@@ -120,6 +120,7 @@ footer {
   transition: 0.3s box-shadow ease-in-out, 0.3s transform ease-in-out;
   padding: 10pt 30pt;
   text-align: center;
+  margin: 10pt;
 }
 
 .content .dataInput button:hover {
@@ -131,18 +132,19 @@ footer {
 .content .dataTable .list  {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
+
 
 .content .dataTable .list p {
   font-size: 20pt;
   background-color: #3e64ff;
-  padding: pt 10pt 5pt 10pt;
+  padding: 5pt 10pt;
   margin: 10pt;
   border-radius: 3em;
   font-weight: bold;
-  line-height: 3em;
-  width: 3em; 
+  line-height: 2em;
+  /* width: 3em;  */
 }
 .content .dataTable #noResults {
   font-size: 20pt;
