@@ -9,7 +9,7 @@ function App() {
   
   const [numbers, setNumber] = useState([]);
   const [a, setA] = useState(0);
-  const [m, setM] = useState(1);
+  const [m, setM] = useState(1000);
   const [c, setC] = useState(0);
   const [x, setX] = useState(0); 
   const [graph, setGraph] = useState({theme: "dark1", backgroundColor: "rgba(0,0,0,0)", data: [{}]});
@@ -20,13 +20,14 @@ function App() {
     let number = x;
     let list = [];
     let listUniform = [];
-    
-    for (let index = 0; index < m; index++) {
-      number = ((a*number)+c)%m;
-      listUniform[index] = (number/m).toFixed(3);
-      list[index] = number;
 
+    for (let index = 0; index < m; index++) {
+      let result = (a*number+c)%m; 
+      listUniform[index] = (result/m).toFixed(3);
+      list[index] = result;
+      number = result;
     }
+
     setNumber(listUniform);
     generateGraph(list);
     generateFile(listUniform);
